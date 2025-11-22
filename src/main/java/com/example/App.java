@@ -49,7 +49,7 @@ public class App
     public static void game(int guesses, int ans){
         boolean correctInput = false;
         String newGame; 
-        boolean boolInput = false;
+        //boolean boolInput = false;
         int count = 0;
 
         while (guesses > 1) {
@@ -70,21 +70,21 @@ public class App
                 System.out.println("Incorrect! The number is smaller than " + input);
             } else {
                 guesses = 0;
-                System.out.println("Correct! You guessed the correct number in " + count + " attempts.");
+                System.out.println("Correct! You guessed the correct number in " + count + " attempt(s).");
                 System.out.println("Would you like to play again? ");
                 System.out.println("Yes or No");
-                newGame = scanner.next();
-                switch (newGame.toLowerCase()) {
-                    case "yes":
+                newGame = "";
+
+                while(!newGame.toLowerCase().equals("yes") || !newGame.toLowerCase().equals("no")){
+                    System.out.println("Please enter Yes or No: ");
+                    newGame = scanner.next();
+                    if(newGame.toLowerCase().equals("yes")){
                         levelSelect();
                         break;
-                    case "no":
+                    }
+                    else if(newGame.toLowerCase().equals("no")){
                         break;
-                //need to continue here over and over until yes or no
-                    default:
-                        System.out.println("Please enter Yes or No: ");
-                        scanner.next();
-                        break;
+                    }
                 }
             }
         }
