@@ -93,7 +93,7 @@ public class App
     public static void level(int level){
         int range = 100 - 1;
         int ans = (int)(Math.random() * range) + 1;
-        System.out.println(ans);
+        //System.out.println(ans);
         if(level == 1){
             game(10, ans);
         }
